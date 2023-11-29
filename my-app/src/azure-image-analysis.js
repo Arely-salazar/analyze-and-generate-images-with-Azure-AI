@@ -4,7 +4,7 @@ import axios from 'axios';
 const analyzeImage = async (imageUrl, features) => {
   try {
     const response = await axios.post(
-      'https://<nombre-recurso>.cognitiveservices.azure.com/vision/v4.0/analyze',
+      'https://analisisimagen20223.cognitiveservices.azure.com/vision/v4.0/analyze',
       {
         url: imageUrl,
         visualFeatures: features || 'Categories,Description,Color',
