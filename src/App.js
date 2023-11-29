@@ -10,7 +10,7 @@ function App() {
       <p>
         Insert URL or type prompt:
       </p>
-      <label htmlFor="imagen-url"> URL de la imagen:</label>
+      <label htmlFor="imagen-url"> </label>
     </div>
   );
 }
