@@ -11,8 +11,8 @@ function App() {
         Insert URL or type prompt:
       </p>
       <label htmlFor="imagen-url"> </label>
-      <button onClick={onButtonSubmit}>Analizar</button>
-      <button onClick={onButtonSubmit}>Generar</button>
+      <button type="button">Analizar</button>
+      <button type="button">Generar</button>
     </div>
   );
 }
