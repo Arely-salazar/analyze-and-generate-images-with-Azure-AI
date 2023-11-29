@@ -17,6 +17,8 @@ function App() {
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
       />
+      <button onClick={onButtonSubmit}>Analizar</button>
+      <button onClick={onButtonSubmit}>Generar</button>
     </div>
   );
 }
