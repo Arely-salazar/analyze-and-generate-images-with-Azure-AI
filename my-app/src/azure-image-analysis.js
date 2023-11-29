@@ -1,4 +1,4 @@
-// azure-image-analysis.js
+
 import axios from 'axios';
 
 const analyzeImage = async (imageUrl, features) => {
