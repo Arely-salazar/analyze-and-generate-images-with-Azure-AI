@@ -19,6 +19,10 @@ const App = () => {
       setLoading(false);
     }
   };
+  //funcion para generar imagen
+  const handleGenerar = async () => {
+   
+  };
 
   const DisplayResults = () => {
     if (results) {
@@ -47,9 +51,14 @@ const App = () => {
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
       />
+      <br/>
       <button onClick={handleAnalyze} disabled={loading}>
         Analizar
       </button>
+      <button onClick={handleGenerar} disabled={loading}>
+        Generar
+      </button>
+
       {loading && <p>Procesando...</p>}
       <DisplayResults />
     </div>
