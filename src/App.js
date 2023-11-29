@@ -12,6 +12,7 @@ function App() {
       </p>
       <label htmlFor="imagen-url"> </label>
       <input id="imagen-url" type="text" name="imagen" placeholder="introduzca la url a analizar o un texto para generar una imagen" />
+      <br/>
       <button type="button">Analizar</button>
       <button type="button">Generar</button>
     </div>
