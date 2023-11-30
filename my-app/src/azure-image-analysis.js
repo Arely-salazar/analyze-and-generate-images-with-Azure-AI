@@ -1,27 +1,37 @@
 
 import axios from 'axios';
 
-const analyzeImage = async (imageUrl, features) => {
-  try {
-    const response = await axios.post(
-      'https://analisisimagen20223.cognitiveservices.azure.com/vision/v4.0/analyze',
-      {
-        url: imageUrl,
-        visualFeatures: features || 'Categories,Description,Color',
-      },
-      {
+// azure-image-analysis.js
+const analyzeImage = async (imageUrl) => {
+    const apiKey = 'ff819f39b7184af8807f0e4a352b9b5c'; // Reemplaza con tu clave de API de Azure
+    const endpoint = 'https://analisisimagen2023.cognitiveservices.azure.com/'; // Reemplaza con tu endpoint de Azure
+  
+    const apiUrl = `${endpoint}vision/v3.1/analyze?visualFeatures=Description,Tags&language=en`;
+
+
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Ocp-Apim-Subscription-Key': process.env.REACT_APP_AZURE_VISION_KEY,
+          'Ocp-Apim-Subscription-Key': apiKey,
         },
+        body: JSON.stringify({ url: imageUrl }),
+      });
+  
+      if (response.ok) {
+        const result = await response.json();
+        return result;
+      } else {
+        console.error('Error en la solicitud de análisis de imagen:', response.statusText);
+        return null;
       }
-    );
-
-    return response.data;
-  } catch (error) {
-    console.error('Error analyzing image:', error);
-    throw error;
-  }
-};
-
-export default analyzeImage;
+    } catch (error) {
+      console.error('Error en la solicitud de análisis de imagen:', error.message);
+      return null;
+    }
+  };
+  
+  export default analyzeImage;
+  
