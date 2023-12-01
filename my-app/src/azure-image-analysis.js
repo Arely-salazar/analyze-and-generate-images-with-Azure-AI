@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // azure-image-analysis.js
 const analyzeImage = async (imageUrl) => {
-    const apiKey = 'ff819f39b7184af8807f0e4a352b9b5c'; // Reemplaza con tu clave de API de Azure
+    const apiKey = ''; // Reemplaza con tu clave de API de Azure
     const endpoint = 'https://analisisimagen2023.cognitiveservices.azure.com/'; // Reemplaza con tu endpoint de Azure
   
     const apiUrl = `${endpoint}vision/v3.1/analyze?visualFeatures=Description,Tags&language=en`;
